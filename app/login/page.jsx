@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 
@@ -13,7 +12,6 @@ export default function Login() {
       email,
       password,
     });
-
     if (error) setMessage(error.message);
     else setMessage("Logged in successfully.");
   }
@@ -21,22 +19,17 @@ export default function Login() {
   return (
     <div style={{ padding: 40 }}>
       <h1>Login</h1>
-
-      <input
-        placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
+      <input 
+        placeholder="Email" 
+        onChange={(e) => setEmail(e.target.value)} 
       />
-
-      <input
-        placeholder="Password"
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
+      <input 
+        placeholder="Password" 
+        type="password" 
+        onChange={(e) => setPassword(e.target.value)} 
       />
-
       <button onClick={handleLogin}>Login</button>
-
       <p>{message}</p>
     </div>
   );
 }
-
